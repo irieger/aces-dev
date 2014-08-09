@@ -1,3 +1,13 @@
+## This is a modified version of the ctl tools ##
+
+**Warning:** This is a set of modified CTL files (modified are acesProxy12 and acesLog16i).
+
+This is meant for use with my modified version of ctlrender https://github.com/irieger/CTL to
+generate LUTs to work in acesLog (with acesLog16i transforms) or acesProxy (only acesProxy12)
+color spaces with a LUT based workflow. Input/output values changed. May not be compatible for
+image color transform and should only be used with caution.
+
+
 ## Academy Color Encoding System Developer Resources ##
 
 The Academy Color Encoding System (ACES) is a set of components that facilitates

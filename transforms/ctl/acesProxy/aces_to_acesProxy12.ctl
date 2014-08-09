@@ -68,7 +68,12 @@ void main
   // integer file.
   // The ctlrender option -output_scale could be used for this, but it 
   // currently this option does not appear to function correctly.
-  const float scalar = pow(2.,16)-1.;
+
+
+  //const float scalar = pow(2.,16)-1.;
+  //MODIFICATION: scale to fit 0-1 range in output for LUT workflow
+  const float scalar = 4095;
+
   rOut = acesProxy[0] / scalar;
   gOut = acesProxy[1] / scalar;
   bOut = acesProxy[2] / scalar;

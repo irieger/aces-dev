@@ -21,7 +21,9 @@ float aceslog_to_aces( float aceslog)
   float aces_denorm_trans = pow( 2., -15);
   float aces_denorm_fake0 = pow( 2., -16);
 
-  float aces = pow( 2., (aceslog - aceslog_unity) / aceslog_xperstop);
+  // lift aceslog from float 0-1 range to integer input range expected by delog algorithm
+  float aceslog_lifted = aceslog * 65535;
+  float aces = pow( 2., (aceslog_lifted - aceslog_unity) / aceslog_xperstop);
   
   /* restore denorms */  
   if (aces < aces_denorm_trans) {

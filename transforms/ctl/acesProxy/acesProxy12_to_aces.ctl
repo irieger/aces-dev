@@ -34,8 +34,9 @@ void main
   output varying float aOut
 )
 {
-  rOut = pow( 2., ( ( (rIn - MidCVoffset) / StepsPerStop ) + MidLogOffset) );
-  gOut = pow( 2., ( ( (gIn - MidCVoffset) / StepsPerStop ) + MidLogOffset) );
-  bOut = pow( 2., ( ( (bIn - MidCVoffset) / StepsPerStop ) + MidLogOffset) );
+  // modified to scale back to 12 bit values
+  rOut = pow( 2., ( ( (rIn*4095 - MidCVoffset) / StepsPerStop ) + MidLogOffset) );
+  gOut = pow( 2., ( ( (gIn*4095 - MidCVoffset) / StepsPerStop ) + MidLogOffset) );
+  bOut = pow( 2., ( ( (bIn*4095 - MidCVoffset) / StepsPerStop ) + MidLogOffset) );
   aOut = aIn;  
 }
